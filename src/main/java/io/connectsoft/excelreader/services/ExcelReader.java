@@ -1,18 +1,13 @@
 package io.connectsoft.excelreader.services;
 
-import io.connectsoft.excelreader.IRowMapper;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.reflections.Reflections;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ServiceLoader;
-import java.util.Set;
 
 public class ExcelReader<T> {
 
@@ -55,6 +50,4 @@ public class ExcelReader<T> {
 
         return items;
     }
-
-
 }

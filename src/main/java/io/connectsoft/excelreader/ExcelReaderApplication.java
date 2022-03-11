@@ -2,7 +2,7 @@ package io.connectsoft.excelreader;
 
 import io.connectsoft.excelreader.models.StudentDTO;
 import io.connectsoft.excelreader.services.ExcelReader;
-import io.connectsoft.excelreader.services.StudentRowMapper;
+import io.connectsoft.excelreader.services.StudentDTORowMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.io.ClassPathResource;
@@ -15,7 +15,7 @@ public class ExcelReaderApplication {
 
 		var file = new ClassPathResource("data/students.xlsx");
 
-		var excelReader = new ExcelReader<StudentDTO>(file.getInputStream(), new StudentRowMapper());
+		var excelReader = new ExcelReader<StudentDTO>(file.getInputStream(), new StudentDTORowMapper());
 		var items = excelReader.read();
 	}
 
